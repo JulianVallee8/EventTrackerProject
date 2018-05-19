@@ -21,7 +21,11 @@ public class MilesDrivenServiceImpl implements MilesDrivenService {
 		return mdRepo.findAll();
 		
 	}
-
+	@Override
+	public Mileagedriven show(int id) {
+		return mdRepo.findById(id).get();
+	}
+	
 
 	@Override
 	public Mileagedriven createMileagedriven(Mileagedriven mileagedriven) {
@@ -58,6 +62,8 @@ public class MilesDrivenServiceImpl implements MilesDrivenService {
 	}
 	 return false;
 	}
+
+
 
 	
 	

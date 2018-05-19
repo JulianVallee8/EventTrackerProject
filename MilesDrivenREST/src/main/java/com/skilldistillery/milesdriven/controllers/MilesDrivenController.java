@@ -28,6 +28,11 @@ public class MilesDrivenController {
 	public List<Mileagedriven> indexForMileageDriven(){
 		return mdServ.getMileageDrivenById();
 	}
+	@RequestMapping(path="days/{id}", method=RequestMethod.GET)
+	public Mileagedriven show(@PathVariable int id){
+		return mdServ.show(id);
+		
+	}
 	
 	@RequestMapping(path="days", method=RequestMethod.POST)
 	public Mileagedriven createMileagedriven(@RequestBody Mileagedriven mileagedriven ){
@@ -41,6 +46,8 @@ public class MilesDrivenController {
 	public boolean deleteMileagedriven(@PathVariable int id){
 		return mdServ.deleteMileagedriven(id);
 	}
+	
+	
 	
 	
 	

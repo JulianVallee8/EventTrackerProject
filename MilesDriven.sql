@@ -28,10 +28,10 @@ CREATE TABLE IF NOT EXISTS `MileageDriven` (
 ENGINE = InnoDB;
 
 SET SQL_MODE = '';
-GRANT USAGE ON *.* TO yourmileage@localhost;
  DROP USER yourmileage@localhost;
 SET SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 CREATE USER 'yourmileage'@'localhost' IDENTIFIED BY 'yourmileage';
+GRANT SELECT, INSERT, UPDATE, DELETE ON *.* TO yourmileage@localhost;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
