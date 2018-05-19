@@ -1,6 +1,6 @@
 package com.skilldistillery.milesdriven;
 
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,8 +19,7 @@ public class Mileagedriven {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@CreationTimestamp
-    @Temporal(TemporalType.DATE)
+	
     @Column(name="day")
 	private Date day;
 	

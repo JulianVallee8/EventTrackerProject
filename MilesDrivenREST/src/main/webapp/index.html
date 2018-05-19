@@ -12,10 +12,26 @@
     <input type="number" name="mileageId">
     <button name="lookup">Get Mileage By Id</button>
   </form>
+  
+  <p>Log New Miles Driven</p>
+  <form name="newMileagedriven">
+  	<label>Today's Date: <input type="date" name="day"></label><br>
+  	Miles Driven: <input type="text" name="milesDriven">
+  	<button name="save">Save Mileage</button>
+  </form>
+  
+  <p>Delete Miles Driven</p>
+  <form name="deletemileageForm">
+    <input type="number" name="mileageId">
+    <button name="destroy">Delete Mileage</button>
+  </form>
+  
   <div id="output">
     <div id="mileageData"></div>
-    <div id="actorData"></div>
+    
   </div>
+  
+  
 
 </body>
 </html>
