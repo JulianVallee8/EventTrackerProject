@@ -40,6 +40,7 @@ public class MilesDrivenController {
 	}
 	@RequestMapping(path="days/{id}", method=RequestMethod.PATCH)
 	public Mileagedriven updateMileagedriven(@PathVariable int id, @RequestBody Mileagedriven mileagedriven ){
+		System.out.println("updateMileagedriven");
 		return mdServ.updateMileagedriven(id, mileagedriven);
 	}
 	@RequestMapping(path="days/{id}", method=RequestMethod.DELETE)
