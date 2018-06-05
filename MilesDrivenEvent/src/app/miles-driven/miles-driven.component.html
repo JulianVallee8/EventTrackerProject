@@ -1,0 +1,61 @@
+<h1>Let's See How Many Miles You've Gone</h1>
+
+
+<!-- <p>List Of Miles Driven</p> -->
+
+<table *ngIf="!selected">
+  <thead>
+    <tr>
+      <td>Date</td>
+      <td>Mark if Completed</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let mile of miles">
+      <td><button (click)="displayMiles(mile)">{{mile.day}}</button></td>
+      <td><input type="checkbox" name="subscribed" (change)="updateMileage(mile)"/></td>
+      <td><button (click)= "deleteMileage(mile.id)">Delete</button></td>
+
+    </tr>
+  </tbody>
+</table>
+	<!-- <p>Find Miles Driven By Id</p>
+  <form name="mileageForm">
+    <input type="number" name="mileageId">
+    <button name="lookup">Get Mileage</button>
+  </form> -->
+
+
+  <!-- <p>Enter New Miles Driven</p> -->
+  <form *ngIf="!selected">
+  	<label>Today's Date:</label> <input type="date" name="day" [(ngModel)] = "newMile.day"><br>
+  	Miles Driven: <input type="text" name="milesDriven" [(ngModel)] = "newMile.milesDriven">
+  	<input type="submit" (click)="newMileage()">
+  </form>
+
+
+  <!-- Details -->
+  <div *ngIf="selected && !editMileage">
+
+    <h3>{{selected.id}}</h3>
+    <p>{{selected.day}}</p>
+    <p>{{selected.milesDriven}}</p>
+    <button (click)= displayTable()>Back</button>
+    <button (click)= setEditMiles()>Edit</button>
+  </div>
+
+  	<!-- <p>Edit Miles Driven By Id</p> -->
+  <form *ngIf="editMileage">
+  <label>Edit Miles Driven: </label><input type="text" name = "milesDriven" [(ngModel)] = "editMileage.milesDriven"><br>
+  Edit Today's Date: <input type="date" name="day" [(ngModel)] = "editMileage.day">
+  	<!-- <input type="number" name="mileageId"> -->
+    <button (click)="displayTable()">Cancel</button>
+    <button (click)="updateMileage(editMileage)">Save</button>
+  </form>
+
+
+  <!-- <p>Add Total Miles Driven</p>
+  <form name="mileageAdded">
+    <button name="indexAdded">Show Added Miles</button>
+  </form> -->
+
